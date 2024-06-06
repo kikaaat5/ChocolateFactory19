@@ -1,21 +1,43 @@
 package beans;
 
+import dao.AddressDAO;
+
 public class Location {
 
+	private int id;
 	private double longitude;
 	private double latitude;
 	private Address address;
+	private int addressId;
 	
+	private AddressDAO addressDAO = new AddressDAO();
 	public Location() {
 		// TODO Auto-generated constructor stub
 	}
-	public Location(double longitude, double latitude, Address address) {
+	public Location(int id,double longitude, double latitude, int addressId) {
 		super();
+		this.id = id;
 		this.longitude = longitude;
 		this.latitude = latitude;
-		this.address = address;
+		this.addressId = addressId;
+		this.address = addressDAO.findById(addressId);
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
+	public double getId() {
+		return id;
+	}
+
+	
+	
 	public double getLongitude() {
 		return longitude;
 	}

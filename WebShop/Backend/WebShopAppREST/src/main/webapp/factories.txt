@@ -1,0 +1,4 @@
+# Format: id;name;workingHours;status;locationId;logo;grade;chocolate1;chocolate2;...
+1;Chocolate Factory 1;8-16;Open;1;https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/800px-Chocolate_%28blue_background%29.jpg;4.5;
+2;Chocolate Factory 2;9-17;Closed;2;https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/800px-Chocolate_%28blue_background%29.jpg;3.8;
+3;Chocolate Factory 3;7-15;Open;3;https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_%28blue_background%29.jpg/800px-Chocolate_%28blue_background%29.jpg;4.0;

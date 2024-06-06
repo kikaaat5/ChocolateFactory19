@@ -1,6 +1,7 @@
 package beans;
 
 public class Address {
+	private int id;
 	private String street;
 	private String number;
 	private String city;
@@ -8,12 +9,20 @@ public class Address {
 	public Address() {
 		// TODO Auto-generated constructor stub
 	}
-	public Address(String street, String number, String city, int postCode) {
+	public Address(int id,String street, String number, String city, int postCode) {
 		super();
+		
+		this.id = id;
 		this.street = street;
 		this.number = number;
 		this.city = city;
 		this.postCode = postCode;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getStreet() {
 		return street;

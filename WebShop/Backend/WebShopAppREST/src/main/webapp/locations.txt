@@ -1,0 +1,4 @@
+# Format: id;longitude;latitude;addressId
+1;44.7866;20.4489;1
+2;44.7867;20.4488;2
+3;44.7868;20.4487;3

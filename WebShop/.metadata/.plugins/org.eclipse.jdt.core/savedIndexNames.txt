@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Anastasija\Documents\Projekat\chocolatefactory19\chocolatefactory19-master\WebShop\WebShop\.metadata\.plugins\org.eclipse.jdt.core
+2137199689.index

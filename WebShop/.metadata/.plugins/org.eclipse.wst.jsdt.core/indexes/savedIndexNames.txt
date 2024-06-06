@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+C:\Users\Anastasija\Documents\Projekat\chocolatefactory19\chocolatefactory19-master\WebShop\WebShop\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4281164190.index
+2902067645.index
+591029839.index
+1742322199.index

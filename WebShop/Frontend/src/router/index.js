@@ -3,8 +3,11 @@ import HomeView from '../views/HomeView.vue'
 import Login from '@/views/Login.vue'
 import WebShop from '@/views/WebShop.vue'
 import ChocolateUpdateView from '@/views/ChocolateView.vue'
+<<<<<<< HEAD
 import ChocolateAddView from '@/views/ChocolateAddView.vue'
 
+=======
+>>>>>>> Anastasija-features
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,11 +33,14 @@ const router = createRouter({
       component: ChocolateUpdateView
     },
     {
+<<<<<<< HEAD
       path: '/chocolateAdd',
       name: 'ChocolateAdd',
       component: ChocolateAddView
     },
     {
+=======
+>>>>>>> Anastasija-features
       path: '/about',
       name: 'about',
       // route level code-splitting

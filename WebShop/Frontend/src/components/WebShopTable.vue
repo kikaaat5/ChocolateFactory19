@@ -89,8 +89,22 @@ function createProduct(event) {
 	}
 }
 
+function openUpdateChocolate(c){
+    router.push({ name: 'chocolateUpdate', params:{ chocolateId: c.id }})
+}
 
-
+function deleteChocolate(c){
+    axios.delete('http://localhost:8080/WebShopAppREST/rest/chocolates/'+ c.id)
+    .then(response => {
+        if(response.data != ""){
+            loadFactory();
+        }else{
+            alert('Greska prilikom brisanja');
+        }
+    })
+    .catch(error => {console.log(error(error));
+    });
+}
 </script>
 
 <style scoped>

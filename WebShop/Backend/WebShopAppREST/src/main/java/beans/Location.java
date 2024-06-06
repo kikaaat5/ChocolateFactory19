@@ -20,9 +20,12 @@ public class Location {
 		this.longitude = longitude;
 		this.latitude = latitude;
 		this.addressId = addressId;
-		address = addressDAO.findById(addressId);
+		this.address = addressDAO.findById(addressId);
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getAddressId() {
 		return addressId;
 	}

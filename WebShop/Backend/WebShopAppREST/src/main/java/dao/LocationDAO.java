@@ -7,17 +7,26 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
+import javax.annotation.PostConstruct;
+import javax.servlet.ServletContext;
+import javax.ws.rs.core.Context;
+
 import beans.Factory;
 import beans.Location;
 import beans.Product;
 
 public class LocationDAO {
-	
+	@Context
+	ServletContext ctx;
+	private String Path;
 	public HashMap<Integer,Location> locations = new HashMap<Integer,Location>();
 
 	
+		
+	
+	
 	public LocationDAO() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	public LocationDAO(String contextPath) {
 		loadLocations(contextPath);
@@ -29,6 +38,8 @@ public class LocationDAO {
 	}
 	
 	public Location findById(int id) {
+		
+		
 		  if(locations.containsKey(id)){
 			  return locations.get(id);
 		  }

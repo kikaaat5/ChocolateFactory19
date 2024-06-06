@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
 
 import javax.swing.ImageIcon;
 
+import beans.Address;
 import beans.Factory;
 import beans.Location;
 import beans.Status;
@@ -35,6 +36,12 @@ public class FactoryDAO {
 	public Collection<Factory> getAll() {
 		return factories.values();
 	}
+	public Factory findById(String id) {
+		  if(factories.containsKey(id)){
+			  return factories.get(id);
+		  }
+		  return new Factory();
+	}
 	
 	public void loadFactories(String contextPath) {
         
@@ -43,7 +50,7 @@ public class FactoryDAO {
             File file = new File(contextPath + "/factories.txt");
             System.out.println(file.getCanonicalPath());
             in = new BufferedReader(new FileReader(file));
-            String line, name = "", workingHours = "", statusStr = "", locationIdStr = "", logoStr = "", gradeStr = "";
+            String line,id="", name = "", workingHours = "", statusStr = "", locationIdStr = "", logoStr = "", gradeStr = "";
             StringTokenizer st;
             while ((line = in.readLine()) != null) {
                 line = line.trim();
@@ -51,8 +58,9 @@ public class FactoryDAO {
                     continue;
                 st = new StringTokenizer(line, ";");
                 if (st.countTokens() != 7) {
-                    throw new IllegalArgumentException("Invalid format in products.txt: " + line);
+                  throw new IllegalArgumentException("Invalid format in products.txt: " + line);
                 }
+                id = st.nextToken().trim();
                 name = st.nextToken().trim();
                 workingHours = st.nextToken().trim();
                 statusStr = st.nextToken().trim();
@@ -67,7 +75,7 @@ public class FactoryDAO {
                 }
                 
 
-                factories.put(name, new Factory(name, workingHours, Status.valueOf(statusStr),Integer.parseInt(locationIdStr), logoStr, Double.parseDouble(gradeStr)));
+                factories.put(id, new Factory(id,name, workingHours, Status.valueOf(statusStr),Integer.parseInt(locationIdStr), logoStr, Double.parseDouble(gradeStr)));
             }
         } catch (Exception e) {
             e.printStackTrace();

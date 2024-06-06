@@ -49,7 +49,7 @@
             </tr>
           </thead>
 
-          <tr v-for="f in factories">
+          <tr v-for="f in factories":key="f.id" v-on:click="goToFactoryDetails(f.id)">
             <td>{{ f.id }}</td>
             <td><img width="50" height="50" :src ="f.logo"></td>
             <td>{{ f.name }}</td>
@@ -67,8 +67,13 @@
 <script setup>
 import axios from 'axios';
 import {onMounted,ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 
+const goToFactoryDetails = (id) => {
+  router.push({ name: 'factoryDetails', params: { id } });
+}
 
 const username = ref('');
 const password = ref('');
@@ -115,6 +120,7 @@ function loadProducts() {
             });
 		});
 }
+
 
 </script>
 
